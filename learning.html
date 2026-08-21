@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Learning Assistant - AI For Good</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+
+        .learning-page {
+            min-height: calc(100vh - 75px);
+            padding: 70px 5%;
+            background: #f8fafc;
+        }
+
+        .learning-container {
+            width: 100%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        .learning-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 45px;
+        }
+
+        .learning-icon {
+            width: 70px;
+            height: 70px;
+
+            display: grid;
+            place-items: center;
+
+            margin: 0 auto 20px;
+
+            border-radius: 20px;
+
+            background: #eff6ff;
+
+            font-size: 32px;
+        }
+
+        .learning-header h1 {
+            font-size: 48px;
+            line-height: 1.15;
+            margin-bottom: 15px;
+        }
+
+        .learning-header h1 span {
+            color: #2563eb;
+        }
+
+        .learning-header p {
+            color: #64748b;
+            font-size: 16px;
+        }
+
+        .learning-box {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 20px;
+            padding: 30px;
+
+            box-shadow:
+                0 20px 50px rgba(15,23,42,.08);
+        }
+
+        .learning-form {
+            display: grid;
+            gap: 20px;
+        }
+
+        .learning-form label {
+            display: block;
+
+            font-size: 14px;
+            font-weight: bold;
+
+            color: #334155;
+        }
+
+        .learning-form textarea {
+            width: 100%;
+            min-height: 150px;
+
+            resize: vertical;
+
+            padding: 16px;
+            margin-top: 8px;
+
+            border: 1px solid #cbd5e1;
+            border-radius: 12px;
+
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+
+            outline: none;
+        }
+
+        .learning-form textarea:focus {
+            border-color: #2563eb;
+
+            box-shadow:
+                0 0 0 3px rgba(37,99,235,.1);
+        }
+
+        .learning-options {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+        .learning-options select {
+            width: 100%;
+
+            padding: 13px;
+
+            margin-top: 8px;
+
+            border: 1px solid #cbd5e1;
+
+            border-radius: 10px;
+
+            background: white;
+
+            font-size: 14px;
+        }
+
+        .learning-button {
+            border: none;
+
+            padding: 15px 20px;
+
+            border-radius: 11px;
+
+            background: #2563eb;
+
+            color: white;
+
+            font-size: 15px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+        }
+
+        .learning-button:hover {
+            background: #1d4ed8;
+        }
+
+        .learning-result {
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 22px;
+
+            border-radius: 15px;
+
+            background: #eff6ff;
+
+            border: 1px solid #bfdbfe;
+        }
+
+        .learning-result.show {
+            display: block;
+        }
+
+        .learning-result h3 {
+            margin-bottom: 10px;
+            color: #1d4ed8;
+        }
+
+        .learning-result p {
+            color: #334155;
+
+            font-size: 14px;
+
+            white-space: pre-line;
+        }
+
+        .back-home {
+            display: inline-block;
+
+            margin-bottom: 25px;
+
+            color: #2563eb;
+
+            font-size: 13px;
+
+            font-weight: bold;
+        }
+
+        @media (max-width: 600px) {
+
+            .learning-header h1 {
+                font-size: 36px;
+            }
+
+            .learning-options {
+                grid-template-columns: 1fr;
+            }
+
+            .learning-box {
+                padding: 20px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVBAR ================= -->
+
+<header class="navbar">
+
+    <div class="nav-container">
+
+        <a href="index.html"
+           class="logo">
+
+            <span class="logo-icon">
+                AI
+            </span>
+
+            <span>
+                AI <strong>FOR GOOD</strong>
+            </span>
+
+        </a>
+
+
+        <nav class="nav-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="index.html#features">
+                Features
+            </a>
+
+            <a href="index.html#about">
+                About
+            </a>
+
+            <a href="index.html#responsible-ai">
+                Responsible AI
+            </a>
+
+        </nav>
+
+
+        <div class="nav-actions">
+
+            <button
+                id="themeToggle"
+                class="theme-button"
+                type="button">
+
+                ??
+
+            </button>
+
+
+            <a href="#"
+               class="login-button">
+
+                Log In
+
+            </a>
+
+
+            <a href="#"
+               class="signup-button">
+
+                Sign Up
+
+            </a>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+
+<!-- ================= LEARNING PAGE ================= -->
+
+<main class="learning-page">
+
+    <div class="learning-container">
+
+
+        <a href="index.html"
+           class="back-home">
+
+            ? Back to Home
+
+        </a>
+
+
+        <div class="learning-header">
+
+            <div class="learning-icon">
+                ??
+            </div>
+
+
+            <h1>
+
+                AI Learning
+                <span>Assistant</span>
+
+            </h1>
+
+
+            <p>
+
+                Ask a question and get a simple,
+                easy-to-understand explanation
+                designed to support your learning.
+
+            </p>
+
+        </div>
+
+
+
+        <div class="learning-box">
+
+
+            <form id="learningForm"
+                  class="learning-form">
+
+
+                <div>
+
+                    <label for="question">
+
+                        What would you like to learn?
+
+                    </label>
+
+
+                    <textarea
+                        id="question"
+                        placeholder="Example: Explain photosynthesis in simple words..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <div class="learning-options">
+
+
+                    <div>
+
+                        <label for="level">
+
+                            Learning Level
+
+                        </label>
+
+
+                        <select id="level">
+
+                            <option>
+                                Beginner
+                            </option>
+
+                            <option>
+                                School Student
+                            </option>
+
+                            <option>
+                                College Student
+                            </option>
+
+                            <option>
+                                Advanced
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+
+                    <div>
+
+                        <label for="style">
+
+                            Explanation Style
+
+                        </label>
+
+
+                        <select id="style">
+
+                            <option>
+                                Simple
+                            </option>
+
+                            <option>
+                                Detailed
+                            </option>
+
+                            <option>
+                                Step by Step
+                            </option>
+
+                            <option>
+                                With Examples
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="learning-button">
+
+                    Explain This Topic
+
+                </button>
+
+            </form>
+
+
+
+            <!-- RESULT -->
+
+            <div id="learningResult"
+                 class="learning-result">
+
+                <h3>
+                    Learning Assistant
+                </h3>
+
+
+                <p id="resultText"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script src="script.js"></script>
+
+
+<script>
+
+    var learningForm =
+        document.getElementById("learningForm");
+
+
+    var learningResult =
+        document.getElementById("learningResult");
+
+
+    var resultText =
+        document.getElementById("resultText");
+
+
+    learningForm.onsubmit = function(event) {
+
+        event.preventDefault();
+
+
+        var question =
+            document.getElementById("question").value;
+
+
+        var level =
+            document.getElementById("level").value;
+
+
+        var style =
+            document.getElementById("style").value;
+
+
+        if (question.trim() === "") {
+
+            return;
+
+        }
+
+
+        learningResult.className =
+            "learning-result show";
+
+
+        resultText.innerHTML =
+            "Thanks! Your question is: " +
+            question +
+            "\n\n" +
+
+            "Learning level: " +
+            level +
+            "\n\n" +
+
+            "Explanation style: " +
+            style +
+            "\n\n" +
+
+            "The AI learning engine will be connected here next. " +
+            "For now, this confirms that the learning interface is working correctly.";
+
+    };
+
+</script>
+
+
+</body>
+
+</html>
