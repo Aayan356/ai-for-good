@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In - AI FOR GOOD</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f8ff;
+            color: #172033;
+        }
+
+        .header {
+            height: 72px;
+            background: white;
+            border-bottom: 1px solid #e2e7f0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .logo-box {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: linear-gradient(135deg, #5146e5, #2563eb);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+
+        .home-link {
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 450px;
+            margin: 70px auto;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #e1e7f0;
+            border-radius: 18px;
+            padding: 35px;
+            box-shadow: 0 10px 35px rgba(30, 50, 90, 0.08);
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 0;
+            font-size: 32px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #667085;
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 7px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 18px;
+            border: 1px solid #ccd5e3;
+            border-radius: 9px;
+            font-size: 15px;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2563eb;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px;
+            border: none;
+            border-radius: 9px;
+            background: #2563eb;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+
+        .message {
+            margin-top: 18px;
+            padding: 12px;
+            border-radius: 8px;
+            display: none;
+            text-align: center;
+        }
+
+        .signup {
+            text-align: center;
+            margin-top: 25px;
+            color: #667085;
+        }
+
+        .signup a {
+            color: #2563eb;
+            font-weight: bold;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">
+        <div class="logo-box">AI</div>
+        AI FOR GOOD
+    </div>
+
+    <a class="home-link" href="index.html">Home</a>
+</header>
+
+<main class="container">
+    <div class="card">
+
+        <h1>Welcome Back</h1>
+
+        <p class="subtitle">
+            Log in to your AI FOR GOOD account
+        </p>
+
+        <form id="loginForm">
+
+            <label for="email">Email</label>
+            <input
+                type="email"
+                id="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label for="password">Password</label>
+            <input
+                type="password"
+                id="password"
+                placeholder="Enter your password"
+                required
+            >
+
+            <button type="submit">
+                Log In
+            </button>
+
+        </form>
+
+        <div id="message" class="message"></div>
+
+        <div class="signup">
+            Don't have an account?
+            <a href="signup.html">Sign Up</a>
+        </div>
+
+    </div>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+<script src="auth.js"></script>
+
+</body>
+</html>
